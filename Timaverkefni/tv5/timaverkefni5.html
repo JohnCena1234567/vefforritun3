@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<div id="app">
+		<ul v-for="manneskja in manneskjur">
+			<li v-if="manneskja.aldur < 50">{{ manneskja.nafn }}</li>
+		</ul>
+	</div>
+
+	<script src="https://unpkg.com/vue"></script>
+	<script type="text/javascript">
+		var app = new Vue({
+			el: "#app",
+			data: {
+				manneskjur: [
+					{nafn: 'Birna', aldur: 50},
+					{nafn: 'Jón', aldur: 10},
+					{nafn: 'Sigga', aldur: 25},
+					{nafn: 'Kolla', aldur: 49},
+					{nafn: 'Ólafur', aldur: 67}
+				]
+			}
+		});
+	</script>
+</body>
+</html>

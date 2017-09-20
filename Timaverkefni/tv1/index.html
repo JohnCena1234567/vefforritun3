@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tímaverkefni 1</title>
+</head>
+<body>
+
+	<div>
+		<h1>Texti 1</h1>
+		<h1>Texti 2</h1>
+	</div>
+
+	<form>
+		<input type="name" name="name">
+		<input type="password" name="password">
+	</form>
+
+	<textarea>textAREA</textarea>
+	<h3>jQuery</h3>
+	<p>Border red</p>
+
+
+	<button id="1">Verkefni 1</button>
+	<button id="2">Verkefni 2</button>
+	<button id="3">Verkefni 3</button>
+	<button id="4">Verkefni 4</button>
+	<button id="5">Verkefni 5</button>
+	<button id="6">Verkefni 6</button>
+	<button id="7">Verkefni 7</button>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+
+	<script type="text/javascript">
+		$('#1').click(function() {
+			$('div>h1').css('color', 'green');
+		});
+
+		$('#2').click(function() {
+			$('body').css('background-color', 'red');
+		});
+
+		$('#3').click(function() {
+			$('form>input').hide();
+		});
+
+		$('#4').click(function() {
+			$('body').append('<p><div>jQuery texti</p></div>');
+		});
+
+		$('#5').click(function() {
+			$('textarea, h3, p').css('border-color', 'red');
+			$('textarea, h3, p').css('border-style', 'solid');
+		});
+
+		$('#6').click(function() {
+			$('textarea').replaceWith('<input>');
+		});
+
+		$('#7').click(function() {
+			$('h1:first-of-type').text('Fyrsta heading 1 tagið');
+		});
+	</script>
+</body>
+</html>

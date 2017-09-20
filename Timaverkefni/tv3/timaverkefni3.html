@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<div id="app">
+		<h2>Sniðmátsaðferð</h2>
+		<ul v-for="countrie in countries">
+			{{ countrie.name }} ({{countrie.population}})
+		</ul>
+
+		<h2>Eiginleikaaðferð</h2>
+		<ul v-for="countrie in countries">
+			<span v-text="countrie.name"></span>
+			<span v-text="countrie.population"></span>
+		</ul>
+	</div>
+	<script src="https://unpkg.com/vue"></script>
+	<script type="text/javascript">
+		var app = new Vue({
+			el: "#app",
+			data: {
+				countries: [
+					{ name: 'Poland', population: 38635673},
+					{ name: 'Rússland', population: 146431801},
+					{ name: 'Mexico', population: 130881426},
+					{ name: 'Frakkland', population: 65039482}
+				]
+			}
+		});
+	</script>
+</body>
+</html>
