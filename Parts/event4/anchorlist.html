@@ -3,15 +3,18 @@
 <head>
 	<title></title>
 	<meta charset="utf-8">
+	<style type="text/css">
+		a {
+			display: block;
+		}
+	</style>
 </head>
 <body>
 	<div id="app">
-		<input type="text" v-model="task">
-		<button @click="insert">Create Task</button>
-
 		<ul>
-			<li v-for="i in tasks" v-text="i"></li>
+			<a v-for="item in anchors" :href="item" v-text="item"></a>
 		</ul>
+		
 	</div>
 
 	<script src="https://unpkg.com/vue"></script>
@@ -19,15 +22,12 @@
 		var app = new Vue({
 			el: "#app",
 			data: {
-				tasks: [],
-				task: ''
-				
-			},
-			methods: {
-				insert: function() {
-					this.tasks.push(this.task)
-					this.task = ''
-				}
+				anchors: [
+					'https://google.is',
+					'http://visir.is',
+					'http://fotbolti.is',
+					'https://facebook.is'
+				]
 			}
 		});
 	</script>
