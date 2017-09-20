@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dæmi 2</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div id="app">
+		<form action="https://google.is/search" method="GET">
+		<input type="text" v-model="search">
+		<input type="hidden" name="q" v-bind:value="search">
+		<button type="submit">Submit</button>
+		</form>
+	</div>
+	
+	<script src="https://unpkg.com/vue"></script>
+	<script type="text/javascript">
+		var app = new Vue({
+			el: "#app",
+			data: {
+				search: ''
+			}
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dæmi 1</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div id="app">
+		<input type="text" v-model="search">
+		
+		<div>
+			<a v-if="search" v-bind:style="{ color: litur }" v-bind:href="google + search">Search</a>
+			<a v-else="search" v-bind:style="{ color: litur2 }"  v-bind:href="google + search">Search</a>
+		</div>
+	</div>
+
+	<script src="https://unpkg.com/vue"></script>
+	<script type="text/javascript">
+		var app = new Vue({
+			el: "#app",
+			data: {
+				search: '',
+				google: 'https://www.google.is/search?q=',
+				litur: '#FF6347',
+				litur2: 'black'
+			}
+		});
+	</script>
+</body>
+</html>
