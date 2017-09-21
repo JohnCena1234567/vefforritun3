@@ -12,7 +12,8 @@
 <body>
 	<div id="app">
 		<ul>
-			<a v-for="item in anchors" :href="item" v-text="item"></a>
+			<a @click.prevent="handleClick(anchor.anchor)" v-for="anchor in anchors" :href="anchor.anchor" v-text="anchor.name"></a>
+			<p>Virkur linkur er: {{ activeLink }}</p>
 		</ul>
 		
 	</div>
@@ -23,11 +24,17 @@
 			el: "#app",
 			data: {
 				anchors: [
-					'https://google.is',
-					'http://visir.is',
-					'http://fotbolti.is',
-					'https://facebook.is'
-				]
+					{ anchor: 'https://google.is', name: 'Google' },
+					{ anchor: 'http://visir.is', name: 'Visir' },
+					{ anchor: 'http://fotbolti.is', name: 'Fotbolti' },
+					{ anchor: 'https://facebook.is', name: 'Facebook' }
+				],
+				activeLink: ''
+			},
+			methods: {
+				handleClick: function(anchor) {
+					this.activeLink = anchor
+				}
 			}
 		});
 	</script>
