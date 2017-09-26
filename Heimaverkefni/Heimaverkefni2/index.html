@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>To do List</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div class="container" id="app">
+		<section class="panel">
+			<input type="checkbox" id="mark-all">
+			<input type="text" placeholder="What do you need to do?" autofocus class="text-input" v-model="newTask" v-on:keyup.enter="addTask">
+			<button v-on:click="clearList">Clear List</button>
+		</section>
+		
+		<ul class="list">
+			<li v-for="task in taskList" v-bind:class="{done: task.checked}">
+				<input type="checkbox" class="checkbox" v-model="task.checked">
+				<input type="text" class="text-input">
+				<label for="checkbox">{{ task.text }}</label>
+				<button class="delete" v-on:click="removeTask(task)">X</button>
+			</li>
+		</ul>
+
+		<pre>{{ $data }}</pre>
+	</div>
+
+	<script src="https://unpkg.com/vue"></script>
+	<script type="text/javascript">
+		var app = new Vue({
+			el: "#app",
+			data: {
+				newTask: "",
+				taskList: []
+			},
+			methods: {
+				addTask: function() {
+					var task = this.newTask.trim();
+					if (task) {
+						this.taskList.push({
+							text: task,
+							checked: false
+						});
+						this.newTask = "";
+					}
+				},
+				removeTask: function(task) {
+					this.taskList.$remove(task);
+					var index = this.taskList.indexOf(task);
+					this.taskList.splice(index, 1);
+				},
+				clearList: function() {
+					this.taskList = [];
+				}
+			}
+		});
+	</script>
+</body>
+</html>
