@@ -8,9 +8,11 @@
 <body>
 	<div id="app">
 		<modal title="Lorem Ipsum" v-show="showModal" @close="showModal = false">
-			Lorem ipsum dolor sit amet
+			<card image="http://vignette2.wikia.nocookie.net/supermarioglitchy4/images/3/3e/WWE-John-Cena-Wallpaper-American-Flag.jpg/revision/latest?cb=20150831131013" avatar="http://shop.wwe.com/on/demandware.static/-/Sites-wwe-us-navigation/default/dwf86f9538/images/superstar-thumb-300/john-cena-2017.jpg" title="John Cena" subtitle="@johncena">
+					I am the best!
+				</card>
 		</modal>
-		<a class="button is-primary is-large modal-button" data-target="modal" @click="showModal = true">Launch modal</a>
+		<a class="button is-primary is-large modal-button" @click="showModal = true">Launch modal</a>
 	</div>
 	<script src="https://unpkg.com/vue"></script>
 	<script type="text/javascript" src="timaverkefni6.js"></script>
